@@ -3,7 +3,7 @@ on: delete
 
 jobs:
   job1:
-    if: github.event.ref_type == 'branch' and github.event.ref like 'nithesh%'
+    if: github.event.ref_type == 'branch' && github.event.ref == 'nithesh*'
     runs-on: ubuntu-latest
     steps:
         
