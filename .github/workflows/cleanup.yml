@@ -9,9 +9,9 @@ jobs:
         
     - name: 'Clean up'
       run: |
-        if [[ "${{ github.event.ref }}" == "test19" ]]\ 
-        then\
-          echo "The variable is greater than 10."\
+        if [[ "${{ github.event.ref }}" == "test19" ]] \
+        then \
+          echo "The variable is greater than 10." \
         fi
 
     - name: 'Clean up'
