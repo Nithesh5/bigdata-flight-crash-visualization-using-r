@@ -8,10 +8,9 @@ jobs:
     steps:
         
     - name: 'Clean up'
-      run: if [[ $github.event.ref == Nithesh_* ]]
-           |then
-           |   echo "The variable is greater than 10."
-           |fi
+      run: |
+            if [[ "${{ github.event.ref }}" == Nithesh_* ]]; then 
+              echo "The variable is greater than 10."
 
     - name: 'Clean up'
       run: echo 'Clean up for branch ${{ github.event.ref }}'
