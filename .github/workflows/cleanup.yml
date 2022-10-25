@@ -2,10 +2,17 @@ name: Branch Deleted
 on: delete
 
 jobs:
-  delete:
+  job1:
     if: github.event.ref_type == 'branch'
     runs-on: ubuntu-latest
     steps:
       - name: Clean up
         run: |
           echo "Clean up for branch ${{ github.event.ref }}"
+  job2:
+    if: github.event.ref_type == 'branch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clean up2
+        run: |
+          echo "CCCClean up for branch ${{ github.event.ref }}"
