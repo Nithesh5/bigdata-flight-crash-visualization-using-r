@@ -2,7 +2,7 @@ name: Branch Deleted
 on: 
   delete:
     branches:    
-      - 'nithesh/*'
+      - 'nithesh*'
 
 jobs:
   job1:
