@@ -13,4 +13,10 @@ jobs:
     - name: 'Clean up'
       run: echo 'Clean up for branch ${{ github.event.ref }}'
         
+    - name: 'Clean up2'
+      run: if "sss"=="aaaa" echo '1Clean up for branch ${{ github.event.ref }}'
+
+    - name: 'Clean up3'
+      run: if "sss"=="sss" echo '2Clean up for branch ${{ github.event.ref }}'
+        
 
