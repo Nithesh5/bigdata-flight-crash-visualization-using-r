@@ -6,28 +6,16 @@ jobs:
     if: github.event.ref_type == 'branch'
     runs-on: ubuntu-latest
     steps:
-      - name: Clean up
-        run: |
-          echo "Clean up for branch ${{ github.event.ref }}"
-  job2:
-    if: github.event.ref_type == 'branch'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clean up2
-        run: |
-          echo "CCCClean up for branch ${{ github.event.ref }}"
-  
-  job3:
-    if: github.event.ref_type == 'branch'
-    runs-on: ubuntu-latest
-    steps:
     - id: 'auth'
       uses: 'google-github-actions/auth@v0'
       with:
         credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
-
+        
+    - name: 'Clean up'
+      run: echo 'Clean up for branch ${{ github.event.ref }}'
+        
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v0'
 
     - name: 'Use gcloud CLI'
-      run: 'gcloud info'
+      run: 'gcloud pubsub topics publish dataform-tbl-cleanup --message=${{ github.event.ref }}'
