@@ -18,6 +18,8 @@ jobs:
           echo "CCCClean up for branch ${{ github.event.ref }}"
   
   job3:
+    if: github.event.ref_type == 'branch'
+    runs-on: ubuntu-latest
     steps:
     - id: 'auth'
       uses: 'google-github-actions/auth@v0'
